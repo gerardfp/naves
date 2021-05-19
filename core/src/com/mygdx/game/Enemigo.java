@@ -1,14 +1,13 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Enemigo extends EnemigoBase{
-    Texture texture = new Texture("nimbus_0.png");
-    float x, y, w, h, vx, vy;
     Temporizador cambioVelocidad = new Temporizador(60);
+    // las variables texture, x, y, w, ... las hereda de EnemigoBase
 
     Enemigo() {
+        texture = new Texture("nimbus_0.png");
         x = 640;
         y = Utils.random.nextInt(480);
         w = 64 * 2;
@@ -31,8 +30,6 @@ public class Enemigo extends EnemigoBase{
         if (y > 480 - h) y = 480 - h;
     }
 
-    void render(SpriteBatch batch) {
-        batch.draw(texture, x, y, w, h);
-    }
+    // el metodo render() lo hereda de EnemigoBase
 }
 

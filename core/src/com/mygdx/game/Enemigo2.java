@@ -1,13 +1,11 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Enemigo2 extends EnemigoBase{
-    Texture texture = new Texture("nimbus_0.png");
-    float x, y, w, h, vx, vy;
 
     Enemigo2() {
+        texture = new Texture("nave6.png");
         x = 640;
         y = Utils.random.nextInt(480);
         w = 64 * 2;
@@ -20,10 +18,6 @@ public class Enemigo2 extends EnemigoBase{
 
         if (y < 0) y=0;
         if (y > 480 - h) y = 480 - h;
-    }
-
-    void render(SpriteBatch batch) {
-        batch.draw(texture, x, y, w, h);
     }
 }
 
